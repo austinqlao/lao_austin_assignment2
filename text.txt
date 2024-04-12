@@ -1,61 +1,59 @@
-Test1
-- Scenario: User selects 0 quantities for all items
-- Expected Result: User is informed that they must select at least one item to purchase  
-- Actual Result: User is informed that they must select at least one item to purchase
-- Tested by: Entering 0 in all quantity text boxes and clicking the purchase button
+Test 1
+Scenario: User reloads page after making selection
+Expected Result: User selection is still saved
+Actual Result: User selection is still saved
+Tested by: Entering quantity and reloading page
 
-Test2
-- Scenario: User selects -100 quantities for an item
-- Expected Result: User is informed that they must select a non-negative number of item to purchase  
-- Actual Result: User is informed that they must select at least a non-negative number of item to purchase
-- Tested by: Entering -100 in one quantity text box and clicking the purchase button
+Test 2
+Scenario: User selects all quantities available for all products
+Expected Result: User is prompted to invoice and quantity available is updated
+Actual Result: User is prompted to invoice and quantity available is updated
+Tested by: Entering max amount in all quantity text boxes and clicking the purchase button - after viewing invoice, reload page to see updated quantities
 
-Test3
-- Scenario: User selects 1 quantities for all items
-- Expected Result: User is redirected to invoice and quantity is updated   
-- Actual Result:User is redirected to invoice and quantity is updated
-- Tested by: Entering 1 in all quantity text boxes and clicking the purchase button
+Test 3
+Scenario: User selects no quantities for all items except for one
+Expected Result: User gets an invoice with one product row
+Actual Result:User gets an invoice with one product row
+Tested by: Entering 0 in all quantity text boxes except for one and clicking the purchase button
 
-Test4
-- Scenario: User selects all quantities avilable for all products
-- Expected Result: User is prompted to invoice and quantity aval. is updated 
-- Actual Result: User is prompted to invoice and quantity aval. is updated 
-- Tested by: Entering max amount in all quantity text boxes and clicking the purchase button - after viewing invoice, reload page to see updated quantities
+Test 4
+Scenario: User selects different positive quantities for each product
+Expected Result: User is directed to invoice
+Actual Result: User is directed to invoice
+Tested by: putting in different positive numbers in all quantity text boxes and clicking the purchase button
 
-Test5
-- Scenario: User selects different positive quantities for each product 
-- Expected Result: User is directed to invoice 
-- Actual Result: User is directed to invoice 
-- Tested by: puttinh in different positive nubers in all quantity text boxes and clicking the purchase button
+Test 5
+Scenario: User refreshes invoice
+Expected Result: User's info is still present
+Actual Result:User's info is still present
+Tested by: clicking purchase button and checking to make sure invoice saves selections
 
-Test6
-- Scenario: User reloads page after making selection 
-- Expected Result: User selection is still saved 
-- Actual Result: User selection is still saved 
-- Tested by: Entering quantity and reloading page 
+Test 6
+Scenario: User selects -10 quantities for an item
+Expected Result: User is informed that they must select a non-negative number of item to purchase
+Actual Result: User is informed that they must select at least a non-negative number of item to purchase
+Tested by: Entering -10 in one quantity text box and clicking the purchase button
 
-Test7
-- Scenario: User goes back to store after getting invoice 
-- Expected Result: User is redirected to store  
-- Actual Result: User is redirected to store 
-- Tested by: making a purchase and hitting the back button 
+Test 7
+Scenario: User selects 0 quantities for all items
+Expected Result: User is informed that they must select at least one item to purchase
+Actual Result: User is informed that they must select at least one item to purchase
+Tested by: Entering 0 in all quantity text boxes and clicking the purchase button
 
-Test8
-- Scenario: User selects no quantities for all items except for one 
-- Expected Result: User gets an invoice with one product row 
-- Actual Result:User gets an invoice with one product row 
-- Tested by: Entering 0 in all quantity text boxes except for one and clicking the purchase button
+Test 8
+Scenario: User goes back to store after getting invoice
+Expected Result: User is redirected to store
+Actual Result: User is redirected to store
+Tested by: making a purchase and hitting the back button
 
-Test9
-- Scenario: User refreshes invoice 
-- Expected Result: User's info is still present 
-- Actual Result:User's info is still present 
-- Tested by: clicking purchase button and checking to make sure invoice saves selections 
+Test 9
+Scenario: User selects 2 positive and 2 negative quantities for items
+Expected Result: User is informed that they must select a positive number of items to purchase
+Actual Result: User is informed that they must select a positive number of items to purchase
+Tested by: Entering 2 positives (10,5) and 2 negatives (-2,-5) in all quantity text boxes and clicking the purchase button
 
-Test10
-- Scenario: User selects 2 positve and 2 negative quantities for items
-- Expected Result: User is informed that they must select a positve number of items to purchase  
-- Actual Result: User is informed that they must select a positve number of items to purchase 
-- Tested by: Entering 2 positives (10,5) and 2 negatives (-2,-5) in all quantity text boxes and clicking the purchase button
-
-~ all tests were successful (yay!)
+Test 10
+Scenario: User selects 1 quantities for all items
+Expected Result: User is redirected to invoice and quantity is updated
+Actual Result:User is redirected to invoice and quantity is updated
+Tested by: Entering 1 in all quantity text boxes and clicking the purchase button

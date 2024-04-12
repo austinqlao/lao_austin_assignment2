@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+  background: white;
+}
+
+img {
+  border-radius: 4px;
+  padding: 5px;
+  width: 500px;
+}
+
+img:hover {
+  box-shadow: 0 0 5px 1px black;
+}

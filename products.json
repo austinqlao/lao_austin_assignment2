@@ -1,42 +1,58 @@
 [
   {
-      "name": "Moisturizing Facial Cleanser",
-      "type": "Cleanser",
-      "price": 15.00,
-      "description": "Your first step in your skincare routine! A non-stripping cleanser for face and body",
-      "image": "1.jpg",
-      "quantity_available": 15
+      "name": "Cherry MX Black Switch",
+      "type": "Linear",
+      "price": 0.55,
+      "image": "CherryBlack.webp",
+      "quantity_available": 80
   },
   {
-      "name": "AHA Toner",
-      "type": "Toner",
-      "price": 15.00,
-      "description": "An optional second step to help exfoliate skin and reduce bumps",
-      "image": "5.jpg",
-      "quantity_available": 15
+      "name": "Cherry MX Nature White Switch",
+      "type": "Linear",
+      "price": 1.25,
+      "image": "CherryWhite.webp",
+      "quantity_available": 176
   },
   {
-      "name": "Essence Pack",
-      "type": "Face Mask",
-      "price": 8.00,
-      "description": "A face mask that replenishes skins hydration and dullness in just 20-30 minutes",
-      "image": "4.jpg",
-      "quantity_available": 40
+    "name": "Cherry MX Blue Switch",
+      "type": "Clicky",
+      "price": 0.45,
+      "image": "CherryBlue.webp",
+      "quantity_available": 192
   },
   {
-      "name": "Ceramide Mositerizer",
-      "type": "Moisturizer",
-      "price": 17.00,
-      "description": "Designed for dry skin in need of extra replenishing moisture",
-      "image": "2.jpg",
-      "quantity_available": 10
+    "name": "Cherry MX Green Switch",
+      "type": "Clicky",
+      "price": 0.45,
+      "image": "CherryGreen.webp",
+      "quantity_available": 300
   },
   {
-      "name": "Vitamin C Serum",
-      "type": "Serum",
-      "price": 30.00,
-      "description": "An optional product for those who wish to brighten their skin and fade dark spots",
-      "image": "3.jpg",
+    "name": "Cherry MX Red Switch",
+      "type": "Linear",
+      "price": 0.45,
+      "image": "CherryRed.webp",
       "quantity_available": 7
+  },
+  {
+    "name": "Cherry MX Brown Switch",
+      "type": "Tactile",
+      "price": 0.45,
+      "image": "CherryBrown.webp",
+      "quantity_available": 300
+  },
+  {
+    "name": "Cherry MX Speed Silver Switch",
+      "type": "Linear",
+      "price": 0.45,
+      "image": "CherrySilver.webp",
+      "quantity_available": 300
+  },
+  {
+    "name": "Cherry MX Grey Switch",
+      "type": "Tactile",
+      "price": 0.45,
+      "image": "CherryGrey.webp",
+      "quantity_available": 300
   }
 ]

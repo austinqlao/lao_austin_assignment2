@@ -1,26 +1,31 @@
-// get the query string into a easy to use object
+// transform the query string into a user-friendly object.
 const params = (new URL(document.location)).searchParams;
 let errors = {};
 let quantities = [];
 
-// check if the query string has errors, if so parse it
+// Look for problems in the query string and parse it if necessary.
+
 if (params.has('errors')) {
   errors = JSON.parse(params.get('errors'));
-  // get the quantities also to insert into the form to make sticky
+  // Obtain the quantities to add to the form in order to make it sticky.
   quantities = JSON.parse(params.get('quantities'));
-  // Put up an alert box if there are errors
-  // <modify code here to put up an alert if your have an error in errors indicating no quantities were selected>
-  alert('Please fix the errors in the form and resubmit');
+  // If there are any issues, display an alert box.
+  // If you have a mistake in your code that indicates no amounts were picked, change this to trigger an alert.
+
+  alert('Please fix errors and retry');
 }
 
 // IR4 
 function updatePurchaseButton() {
-  //declares a variable to change the value of the Purchase button
+  //creates a variable to alter the Purchase button's value.
+
   const purchaseButton = document.getElementById("purchaseButton");
-  // ensures that the length of the array is greater than 0 and makes sure its 0
+  // guarantees that the array's length is higher than 0 and that it is 0
+
   if (quantities.length > 0 && quantities.every(qty => parseInt(qty) == 0)) {
-    purchaseButton.value = "Please Select Some Items to Purchase";
-  //if there is an error of a nonNegInt it will display this message inside the purchase button
+    purchaseButton.value = "SELECT ITEMS TO PURCHASE";
+  //The purchase button will show this message if there is a non-NegInt problem.
+
   } else if (Object.keys(errors).length > 0) {
     purchaseButton.value = "Please fix the errors and try again";
   } else {
@@ -30,9 +35,8 @@ function updatePurchaseButton() {
 
 let products;
 window.onload = async function () {
-  // use fetch to retrieve product data from the server
-  // once the products have been successfully loaded and formatted as a JSON object
-  // display the products on the page
+  // To obtain product information from the server, use fetch. following the successful loading and formatting of the products as a JSON object. Show the items on the page.
+
   await fetch('products.json').then(await function (response) {
     if (response.ok) {
       response.json().then(function (json) {
@@ -46,7 +50,8 @@ window.onload = async function () {
   });
 }
 
-// function to perform the filtering of the products
+// function to carry out the product filtering
+
 function myFunction() {
   var input, filter, ul, si, a, i, txtValue;
   input = document.getElementById("search_textbox");
@@ -65,15 +70,18 @@ function myFunction() {
 
 
 function display_products() {
-  // loop through the products array and display each product as a section element
+  // loops through the array of goods, displaying each one as a section element.
+
   for (let i = 0; i < products.length; i++) {
     let quantity_label = 'Quantity';
-    // if there is an error with this quantity, put it in the label to display it
+    // Put the issue in the label so that it is visible if there is a problem with this quantity.
+
     if( (typeof errors['quantity'+i]) != 'undefined' ) {
       quantity_label = `<font class="error_message">${errors['quantity'+i]}</font>`;
     }
     let quantity = 0;
-    // put previous quantity in textbox if it exists
+    // insert the previous amount, if any, in the text box.
+
     if((typeof quantities[i]) != 'undefined') {
       quantity = quantities[i];
     }
