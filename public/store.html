@@ -4,32 +4,114 @@
 <head>
   <script src="store.js" type="text/javascript"></script>
   <meta charset="utf-8">
-  <title>Can Goods Store</title>
+  <title>Madden's Skincare Store</title>
+  <style>
+    /* My CSS :D */
+    body {
+      font-family: 'Segoe UI'; /* used google fonts to find cutie pa tootie font */
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
 
-  <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet">
+    header {
+      background-color: #fadbd8;
+      padding: 20px;
+      text-align: center;
+    }
 
-  <link href="can-style.css" rel="stylesheet">
+    h1 { 
+      margin: 0;
+      color: #b10268;
+      font-size: 32px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #search_textbox {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #dcdde1;
+      width: 200px;
+      margin-top: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; 
+      padding: 20px;
+    }
+
+    .product {
+      max-width: 400px; 
+      width: 100%; 
+      margin: 20px;
+      padding: 15px;
+      background-color: #000000;
+      border-radius: 10px;
+      text-align: left;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+    }
+
+    .product .product-info {
+      flex-grow: 1;
+    }
+
+    footer {
+      background-color:  #fadbd8;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    h1 {
+      color: #000000;
+      margin-top: 0;
+    }
+        
+    input[type="submit"] {
+      background-color: #a1d2af;
+      color: #000000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+  
+    input[type=submit]{
+    margin-left:46%;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    font-size: medium;
+    background-color:  #83a884;
+    margin-bottom: 50px;
+}
+  </style>
+  
 </head>
 
 <body id="theBody">
 
-<header>
-  <h1>Can Goods Store</h1>
-  <input id="search_textbox" onkeyup="myFunction()" placeholder="Search ..." title="Type in search term" type="text">
-</header>
-<form action="./process_purchase_form" method="POST">
-  <div>
+  <header>
+    <h1>Madden's Skincare Store</h1>
+    <input id="search_textbox" onkeyup="myFunction()" placeholder="Search ..." title="Type in search term" type="text">
+  </header>
+ 
+  <form action="./process_purchase_form" method="POST">
     <main id="products_main_display">
 
     </main>
-  </div>
-  <input type="submit" value="Purchase!">
-</form>
-<footer>
-  <h1>
-    Your One Stop For Can Goods!
-  </h1>
-</footer>
+    <input type="submit" value="Purchase!" onclick="UpdatePurchaseButton" id="purchaseButton">
+
+  </form>
+
+  <footer>
+    <h1>Your One Stop For Skincare!</h1>
+  </footer>
 </body>
 
 </html>

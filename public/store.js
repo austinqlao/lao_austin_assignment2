@@ -13,6 +13,21 @@ if (params.has('errors')) {
   alert('Please fix the errors in the form and resubmit');
 }
 
+// IR4 
+function updatePurchaseButton() {
+  //declares a variable to change the value of the Purchase button
+  const purchaseButton = document.getElementById("purchaseButton");
+  // ensures that the length of the array is greater than 0 and makes sure its 0
+  if (quantities.length > 0 && quantities.every(qty => parseInt(qty) == 0)) {
+    purchaseButton.value = "Please Select Some Items to Purchase";
+  //if there is an error of a nonNegInt it will display this message inside the purchase button
+  } else if (Object.keys(errors).length > 0) {
+    purchaseButton.value = "Please fix the errors and try again";
+  } else {
+    purchaseButton.value = "Purchase!";
+  }
+}
+
 let products;
 window.onload = async function () {
   // use fetch to retrieve product data from the server
@@ -23,6 +38,7 @@ window.onload = async function () {
       response.json().then(function (json) {
         products = json;
         display_products();
+        updatePurchaseButton();
       });
     } else {
       console.log('Network request for products.json failed with response ' + response.status + ': ' + response.statusText);
@@ -62,13 +78,19 @@ function display_products() {
       quantity = quantities[i];
     }
     products_main_display.innerHTML += `
-<section class="item">
-                <h2>${products[i].name}</h2>
-                <p>$${products[i].price}</p>
-                <label>${quantity_label}</label>
-                <input type="text" placeholder="0" name="quantity_textbox[${i}]" value="${quantity}">
-                <img src="./images/${products[i].image}">
-            </section>
+    <section class="item">
+    <div style="text-align: center;">
+    <h2 style=" ;">${products[i].name}</h2>
+        <img src="./images/${products[i].image}" height="150px" width="150px"> 
+    </div>
+
+    <p style="font-size: larger; font-weight: bold; text-align: center;">$${products[i].price}</p>
+   
+    <label>${quantity_label}</label>
+   
+    <input type="text" placeholder="0" name="quantity_textbox[${i}]" value="${quantity}">
+
+    </section>
 `;
   }
 }

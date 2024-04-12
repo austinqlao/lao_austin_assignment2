@@ -1,74 +1,42 @@
 [
   {
-    "name" : "baked beans",
-    "price" : 0.40,
-    "image" : "beans.jpg",
-    "type" : "vegetables"
+      "name": "Moisturizing Facial Cleanser",
+      "type": "Cleanser",
+      "price": 15.00,
+      "description": "Your first step in your skincare routine! A non-stripping cleanser for face and body",
+      "image": "1.jpg",
+      "quantity_available": 15
   },
   {
-    "name" : "hot dogs",
-    "price" : 1.99,
-    "image" : "hotdogs.jpg",
-    "type" : "meat"
+      "name": "AHA Toner",
+      "type": "Toner",
+      "price": 15.00,
+      "description": "An optional second step to help exfoliate skin and reduce bumps",
+      "image": "5.jpg",
+      "quantity_available": 15
   },
   {
-    "name" : "spam",
-    "price" : 2.85,
-    "image" : "spam.jpg",
-    "type" : "meat"
+      "name": "Essence Pack",
+      "type": "Face Mask",
+      "price": 8.00,
+      "description": "A face mask that replenishes skins hydration and dullness in just 20-30 minutes",
+      "image": "4.jpg",
+      "quantity_available": 40
   },
   {
-    "name" : "refried beans",
-    "price" : 0.99,
-    "image" : "refried.jpg",
-    "type" : "vegetables"
+      "name": "Ceramide Mositerizer",
+      "type": "Moisturizer",
+      "price": 17.00,
+      "description": "Designed for dry skin in need of extra replenishing moisture",
+      "image": "2.jpg",
+      "quantity_available": 10
   },
   {
-    "name" : "kidney beans",
-    "price" : 0.58,
-    "image" : "kidney.jpg",
-    "type" : "vegetables"
-  },
-  {
-    "name" : "garden peas",
-    "price" : 0.52,
-    "image" : "gardenpeas.jpg",
-    "type" : "vegetables"
-  },
-  {
-    "name" : "mushy peas",
-    "price" : 0.58,
-    "image" : "mushypeas.jpg",
-    "type" : "vegetables"
-  },
-  {
-    "name" : "corned beef",
-    "price" : 2.39,
-    "image" : "cornedbeef.jpg",
-    "type" : "meat"
-  },
-  {
-    "name" : "tomato soup",
-    "price" : 1.40,
-    "image" : "tomatosoup.jpg",
-    "type" : "soup"
-  },
-  {
-    "name" : "chopped tomatoes",
-    "price" : 0.45,
-    "image" : "tomato.jpg",
-    "type" : "vegetables"
-  },
-  {
-    "name" : "chicken noodle soup",
-    "price" : 1.89,
-    "image" : "chickennoodle.jpg",
-    "type" : "soup"
-  },
-  {
-    "name" : "carrot and coriander soup",
-    "price" : 1.49,
-    "image" : "carrotcoriander.jpg",
-    "type" : "soup"
+      "name": "Vitamin C Serum",
+      "type": "Serum",
+      "price": 30.00,
+      "description": "An optional product for those who wish to brighten their skin and fade dark spots",
+      "image": "3.jpg",
+      "quantity_available": 7
   }
 ]

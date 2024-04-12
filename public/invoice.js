@@ -60,12 +60,12 @@ function display_invoice() {
 
 // Compute shipping and write into table
   let shipping;
-  if (subtotal <= 50) {
-    shipping = 2;
-  } else if (subtotal <= 100) {
+  if (subtotal <= 25) {
     shipping = 5;
+  } else if (subtotal <= 100) {
+    shipping = 2;
   } else {
-    shipping = 0.05 * subtotal; // 5% of subtotal
+    shipping = 0
   }
   document.getElementById('shipping_span').innerText = shipping.toFixed(2);
 
