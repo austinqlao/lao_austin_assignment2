@@ -1,0 +1,87 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register To Continue</title>
+    <link rel="stylesheet" href="registration.css">
+    <script>
+        // get the query string into a easy to use object
+        const params = (new URL(document.location)).searchParams;
+        let errors = {};
+        if (params.has('errors')) {
+            errors = JSON.parse(params.get('errors'));
+            params.delete('errors');
+        }
+        // Function to display errors
+        function ErrorRegister() {
+            for (let key in errors) {
+                const inputField = document.querySelector(`[name="${key}"]`);
+                const errorSpan = document.createElement('span');
+                errorSpan.textContent = errors[key];
+                errorSpan.classList.add('error-message');
+                inputField.insertAdjacentElement('afterend', errorSpan);
+            }
+        }
+        //Load errors on page 
+        window.onload = function () {
+            ErrorRegister();
+        };
+        // IR3!!!! Function to generate a random password
+        function RandomPassword(length) {
+            const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let password = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            return password;
+        }
+        // Function to make random password pop up on page (GPT helped)
+        function generateRandomPassword() {
+            const passwordField = document.getElementById('password');
+            const randomPassword = RandomPassword(10);
+            passwordField.value = randomPassword;
+        }
+        
+
+    </script>
+</head>
+</head>
+
+
+
+
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <form action="/process_registration" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" id="generatePasswordBtn" onclick="generateRandomPassword()">Generate Random Password</button>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>
+
+    <div class="container signin">
+        <p>Already have an account?
+            <script>document.write(`<a href="login.html?${params.toString()}">Sign in</a>`)</script>.
+        </p>
+
+    </div>
+
+</body>
+</html>

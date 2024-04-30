@@ -1,0 +1,8 @@
+XXX- create login and registration page
+XXX- read user data into server for login and registration
+- process registration and save user registration data (user data persistent)
+XXX- integrate login and registration pages
+XXX- no invoice unless login or registered (security)
+- greet user by name on invoice (personalization) 
+XXX- process login
+- Pass quantity data from login and registration to invoice

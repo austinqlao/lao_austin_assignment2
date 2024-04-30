@@ -1,3 +1,15 @@
+function handlePurchase() {
+  // Check if the user is logged in by checking a cookie (example: loggedIn=true)
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('loggedIn='))) {
+    // If logged in, submit the form
+    document.querySelector('form').submit();
+  } else {
+    // If not logged in, redirect to the login page
+    window.location.href = './login.html';
+  }
+}
+
+
 // transform the query string into a user-friendly object.
 const params = (new URL(document.location)).searchParams;
 let errors = {};

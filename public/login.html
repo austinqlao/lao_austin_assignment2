@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        // get the query string into a easy to use object
+        const params = (new URL(document.location)).searchParams;
+        let errors = {};
+        if(params.has('errors')) {
+            errors = JSON.parse(params.get('errors'));
+            params.delete('errors');
+        }
+        console.log(errors);
+
+        
+
+         // Function to display errors GPT helped
+         function ErrorLogin() {
+            for (let key in errors) {
+                const inputField = document.querySelector(`[name="${key}"]`);
+                const errorSpan = document.createElement('span');
+                errorSpan.textContent = errors[key];
+                errorSpan.classList.add('error-message');
+                inputField.insertAdjacentElement('afterend', errorSpan);
+            }
+        }
+        // Load error on page 
+        window.onload = function () {
+            ErrorLogin();
+        };
+        </script>
+</head>
+<body>
+    <form action="./process_login" method="POST">
+    <input type="text" name="email" size="40" placeholder="Enter Email" ><br />
+    <input type="password" name="password" size="40" placeholder="Enter Password"><br />
+    <input type="submit" value="Login" id="submit">
+    </form>
+
+    <div class="container create_account">
+        <p>Don't have an account? Click <a href="registration_page.html">HERE</a>.</p>
+    </div>
+
+    </body>
+</html>
+
+
+
+
