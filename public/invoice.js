@@ -19,6 +19,7 @@ window.onload = function () {
       response.json().then(function (json) {
         products = json;
         display_invoice();
+        emailSpan.innerText = params.get('email');
       });
     } else {
       console.log('Network request for products.json failed with response ' + response.status + ': ' + response.statusText);

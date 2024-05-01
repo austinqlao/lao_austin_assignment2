@@ -86,9 +86,18 @@
   <div>
     <br> 
     <b> 
-      Thank you for your support! Kindly take note: Shipping for subtotals ranging from $0 to $49.99 will be $5. 
+      Thank you for your support <span id="emailSpan"></span>! Kindly take note: Shipping for subtotals ranging from $0 to $49.99 will be $5. 
       For subtotals between $50 and $99.99, shipping will be $2. Subtotals exceeding $100 qualify for free shipping!
     </b>
+    <!--create button-->
+  <button id="logoutBtn" onclick="logout()">Logout</button>
+
+  <script>
+   // Function that redirects the user back to the store page
+    function logout() {
+      window.location.href = "/store.html";
+    }
+    </script>
   </div>
 </body>
 
