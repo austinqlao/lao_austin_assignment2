@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +6,14 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
     <script>
-        // get the query string into a easy to use object
         const params = (new URL(document.location)).searchParams;
         let errors = {};
-        if(params.has('errors')) {
+        if (params.has('errors')) {
             errors = JSON.parse(params.get('errors'));
             params.delete('errors');
         }
-        //console.log(errors);
 
-        
-
-         // Function to display errors GPT helped
-         function ErrorLogin() {
+        function ErrorLogin() {
             for (let key in errors) {
                 const inputField = document.querySelector(`[name="${key}"]`);
                 const errorSpan = document.createElement('span');
@@ -29,30 +22,25 @@
                 inputField.insertAdjacentElement('afterend', errorSpan);
             }
         }
-        // Load error on page 
+
         window.onload = function () {
             ErrorLogin();
         };
-        </script>
+    </script>
 </head>
 <body>
     <script>
         document.write(`<form action="process_login?${params.toString()}" method="POST">`);
     </script>
-    <form action="process_login" method="POST">
-    <input type="text" name="email" size="40" placeholder="Enter Email" ><br />
+    <input type="text" name="email" size="40" placeholder="Enter Email"><br />
     <input type="password" name="password" size="40" placeholder="Enter Password"><br />
     <input type="submit" value="Login" id="submit">
     </form>
 
     <div class="container create_account">
-        <p>Don't have an account? Click </p>
-        <script>document.write(<a href="registration_page.html?${params.toString()}">Register</a>)</script>
+        <p>Don't have an account? Click 
+        <script>document.write(`<a href="registration_page.html?${params.toString()}">Register</a>`) </script>
+        </p>
     </div>
-
-    </body>
+</body>
 </html>
-
-
-
-
